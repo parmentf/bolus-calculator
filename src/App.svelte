@@ -1,4 +1,5 @@
 <script>
+	import BolusCalculator from './BolusCalculator.svelte';
 	export let name;
 </script>
 
@@ -8,4 +9,6 @@
 	}
 </style>
 
-<h1>Hello {name}!</h1>
+<h1>Welcome to {name}!</h1>
+
+<BolusCalculator/>
