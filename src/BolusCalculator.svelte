@@ -9,7 +9,7 @@
 
     function calculeCorrection() {
         correction = glycemie > objectif 
-            ? ((glycemie - objectif) / facteurCorrection).toFixed(2)
+            ? Number(((glycemie - objectif) / facteurCorrection).toFixed(1))
             : 0;
     }
 
@@ -38,19 +38,19 @@
 
 <span>
     <label for="correction">Correction</label>
-    <input type="number" min="0" max="10" value={correction} readonly step="0.01" id="correction">
+    <input type="number" min="0" max="10" value={correction} readonly step="0.1" id="correction">
     <span>U</span>
 </span>
 
 <span>
     <label for="repas">Bolus repas</label>
-    <input type="number" min="0" max="10" value={repas} readonly step="0.01" id="repas">
+    <input type="number" min="0" max="10" value={repas} readonly step="0.1" id="repas">
     <span>U</span>
 </span>
 
 <span>
     <label for="bolus">Bolus total</label>
-    <input type="number" min="0" max="10" value={Number(correction + repas).toFixed(2)} readonly step="0.01" id="bolus">
+    <input type="number" min="0" max="10" value={Number(correction + repas).toFixed(1)} readonly step="0.1" id="bolus">
     <span>U</span>
 </span>
 
