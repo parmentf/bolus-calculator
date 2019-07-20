@@ -38,19 +38,19 @@
 
 <span>
     <label for="correction">Correction</label>
-    <input type="number" value={correction} readonly step="0.01" id="correction">
+    <input type="number" min="0" max="10" value={correction} readonly step="0.01" id="correction">
     <span>U</span>
 </span>
 
 <span>
     <label for="repas">Bolus repas</label>
-    <input type="number" value={repas} readonly step="0.01" id="repas">
+    <input type="number" min="0" max="10" value={repas} readonly step="0.01" id="repas">
     <span>U</span>
 </span>
 
 <span>
     <label for="bolus">Bolus total</label>
-    <input type="number" value={Number(correction + repas).toFixed(2)} readonly step="0.01" id="bolus">
+    <input type="number" min="0" max="10" value={Number(correction + repas).toFixed(2)} readonly step="0.01" id="bolus">
     <span>U</span>
 </span>
 
