@@ -53,15 +53,19 @@
         unit="mg/dl/U"
     />
 
-    <span>
-        <label for="objectif">Objectif glycémique</label>
-        <input type="number" min="80" max="200" bind:value={objectif} id ="objectif">
-        <span>mg/dl</span>
-    </span>
+    <Setting
+        name="Objectif glycémique"
+        min="80"
+        max="200"
+        bind:value={objectif}
+        unit="mg/dl"
+    />
 
-    <span>
-        <label for="rapport">Rapport glucides / insuline</label>
-        <input type="number" min="1" max="100" bind:value={rapportInsulineGlucides} id="rapport">
-        <span>g/U</span>
-    </span>
+    <Setting
+        name="Rapport glucides / insuline"
+        min="1"
+        max="100"
+        bind:value={rapportInsulineGlucides}
+        unit="g/U"
+    />
 </div>
