@@ -9,6 +9,6 @@
 
 <span>
     <label for="setting">{name}</label>
-    <input type="number" min={min} max={max} bind:value={value} on:change={handleChange} id="setting">
+    <input type="number" min={min} max={max} bind:value on:change={handleChange} id="setting">
     <span>{unit}</span>
 </span>
