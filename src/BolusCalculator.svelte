@@ -5,10 +5,10 @@
     let glucides = 0; // g
     let facteurCorrection = 45; // Facteur de correction mg/dl/U
     let objectif = 150; // Objectif glycémique mg/dl
-    let rapportInsulineGlucides = 10; // g / U
+    let rapportGlucidesInsuline = 10; // g / U
 
     $: correction = (glycemie - objectif) / facteurCorrection; // U
-    $: repas = glucides / rapportInsulineGlucides; // U
+    $: repas = glucides / rapportGlucidesInsuline; // U
 </script>
 
 <style>
@@ -65,7 +65,7 @@
         name="Rapport glucides / insuline"
         min="1"
         max="100"
-        bind:value={rapportInsulineGlucides}
+        bind:value={rapportGlucidesInsuline}
         unit="g/U"
     />
 </div>
