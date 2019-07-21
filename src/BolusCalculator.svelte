@@ -1,5 +1,6 @@
 <script>
-    let glycemie = 100; // mg/dl
+    import Bolus from './Bolus.svelte';
+    let glycemie = 150; // mg/dl
     let glucides = 0; // g
     let facteurCorrection = 45; // Facteur de correction mg/dl/U
     let objectif = 150; // Objectif glycémique mg/dl
@@ -8,11 +9,11 @@
     let repas = 0; // U
 
     function calculeCorrection() {
-        correction = Number(((glycemie - objectif) / facteurCorrection).toFixed(1));
+        correction = ((glycemie - objectif) / facteurCorrection);
     }
 
     function calculeRepas() {
-        repas = Number(glucides / rapportInsulineGlucides).toFixed(1);
+        repas = glucides / rapportInsulineGlucides;
     }
 </script>
 
@@ -34,23 +35,20 @@
     <span>g</span>
 </span>
 
-<span>
-    <label for="correction">Correction</label>
-    <input type="number" min="0" max="10" value={correction} readonly step="0.1" id="correction">
-    <span>U</span>
-</span>
+<Bolus
+    name="Correction"
+    value={correction}
+/>
 
-<span>
-    <label for="repas">Bolus repas</label>
-    <input type="number" min="0" max="10" value={repas} readonly step="0.1" id="repas">
-    <span>U</span>
-</span>
+<Bolus
+    name="Bolus repas"
+    value={repas}
+/>
 
-<span>
-    <label for="bolus">Bolus total</label>
-    <input type="number" min="0" max="10" value={(Number(correction) + Number(repas)).toFixed(1)} readonly step="0.1" id="bolus">
-    <span>U</span>
-</span>
+<Bolus
+    name="Bolus total"
+    value={correction + repas}
+/>
 
 <div class="settings">
     <span>
